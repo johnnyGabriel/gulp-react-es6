@@ -8,7 +8,7 @@ const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 
 const instanceBrowserify = browserify({
-                              entries: ['./src/App.jsx'],
+                              entries: ['./src/app.jsx'],
                               extensions: ['.js', '.jsx', '.json'],
                               cache: {},
                               packageCache: {},
@@ -33,7 +33,7 @@ const filesWatch = [
 bundler = () =>
     instanceBrowserify
         .bundle()
-        .pipe(source('App.js'))
+        .pipe(source('app.js'))
         .pipe(gulp.dest('dist'))
 
 watcher = () => {
